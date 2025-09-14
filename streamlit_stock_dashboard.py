@@ -1,10 +1,37 @@
 import streamlit as st
-import plotly.express as px
-import plotly.graph_objects as go
-import pandas as pd
-import yfinance as yf
-import numpy as np
-from scipy import stats
+
+# Check for required packages and provide helpful error messages
+try:
+    import plotly.express as px
+    import plotly.graph_objects as go
+except ImportError:
+    st.error("Plotly is required. Install with: pip install plotly")
+    st.stop()
+
+try:
+    import pandas as pd
+except ImportError:
+    st.error("Pandas is required. Install with: pip install pandas")
+    st.stop()
+
+try:
+    import yfinance as yf
+except ImportError:
+    st.error("yfinance is required. Install with: pip install yfinance")
+    st.stop()
+
+try:
+    import numpy as np
+except ImportError:
+    st.error("NumPy is required. Install with: pip install numpy")
+    st.stop()
+
+try:
+    from scipy import stats
+except ImportError:
+    st.error("SciPy is required. Install with: pip install scipy")
+    st.stop()
+
 import warnings
 from datetime import datetime, timedelta
 warnings.filterwarnings('ignore')
